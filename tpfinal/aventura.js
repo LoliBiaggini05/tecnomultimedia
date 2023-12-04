@@ -1,3 +1,4 @@
+//CON ARREGLO DE BOTON
 class aventura {
   constructor() {
     this.estado = 0;
@@ -5,7 +6,10 @@ class aventura {
     this.historia=[];
     this.mipreload();
     this.i=0;
-    this.opcion= new botones(100, 50);
+    this.b=0;
+    this.opcion=[];
+    this.loadbt();
+    //this.opcion= new boton(100, 50);
     this.j= new juego();
   }
 
@@ -33,21 +37,33 @@ class aventura {
       this.historia[12]="Caperucita Roja  - Charles Perrault Trabajo Practico N6 Tecno Multimedial I Comisión 2 Dolores Biaggini";
     }
   }
+  loadbt(){
+    this.opcion[0]= new boton(100, 50, "HISTORIA");     //P0 0
+    this.opcion[1]= new boton(100, 50, "CREDITOS");     //P0 1
+    this.opcion[2]= new boton(100, 50, "BOSQUE");       //P1 2
+    this.opcion[3]= new boton(100, 50, "PRADERA");      //P1 3
+    this.opcion[4]= new boton(100, 50, "SIGUIENTE");    //REUTILIZABLE P2/4/5/9/11 4
+    this.opcion[5]= new boton(100, 50, "FIN");          //REUTILIZABLE P6/10/12 5
+    this.opcion[6]= new boton(100, 50, "SEGUIR JUNTAS");//REUTILIZABLE P7/8 6
+    this.opcion[7]= new boton(100, 50, "SEGUIR SOLA");  //REUTILIZABLE P7/8 7
+    this.opcion[8]= new boton(100, 50, "VOLVER");       //P13 8
+  }
+  
   estados() {
     if ( this.estado == 0 ) {
       this.j.reinicioj();
       image( this.fondo[0], 0, 0 );
-      this.opcion.dibujobt(370, 500, "HISTORIA");
-      this.opcion.dibujobt(170, 500, "CREDITOS");
+      this.opcion[0].dibujobt(370, 500);
+      this.opcion[1].dibujobt(170, 500);
     } else if ( this.estado == 1 ) {
       image( this.fondo[1], 0, 0 );
       this.pantalla( 0, 5, 5, 580, 110);
-      this.opcion.dibujobt(150, 200, "BOSQUE");
-      this.opcion.dibujobt(120, 280, "PRADERA");
+      this.opcion[2].dibujobt(150, 200);
+      this.opcion[3].dibujobt(120, 280);
     } else if ( this.estado == 2 ) {
       image( this.fondo[2], 0, 0 );
       this.pantalla( 1, 5, 5, 580, 120);
-      this.opcion.dibujobt(470, 500, "SIGUIENTE");
+      this.opcion[4].dibujobt(470, 500);
     } else if ( this.estado == 3 ) {
       this.j.backgj();
       this.j.iniciar();
@@ -56,45 +72,45 @@ class aventura {
     } else if ( this.estado == 4 ) {
       image( this.fondo[4], 0, 0 )
         this.pantalla(3, 5, 5, 580, 120);
-      this.opcion.dibujobt(470, 500, "SIGUIENTE");
+      this.opcion[4].dibujobt(470, 500);
     } else if ( this.estado == 5 ) {
       image( this.fondo[5], 0, 0 )
         this.pantalla(4, 5, 5, 580, 120);
-      this.opcion.dibujobt(470, 500, "SIGUIENTE");
+      this.opcion[4].dibujobt(470, 500);
     } else if ( this.estado == 6 ) {
       image( this.fondo[6], 0, 0 )
         this.pantalla(5, 5, 5, 580, 120);
-      this.opcion.dibujobt(470, 500, "FIN");
+      this.opcion[5].dibujobt(470, 500);
     } else if ( this.estado == 7 ) {
       image( this.fondo[7], 0, 0 )
         this.pantalla(6, 5, 5, 580, 120);
-      this.opcion.dibujobt(400, 500, "SEGUIR JUNTAS");
-      this.opcion.dibujobt(200, 500, "SEGUIR SOLA");
+      this.opcion[6].dibujobt(400, 500);
+      this.opcion[7].dibujobt(200, 500);
     } else if ( this.estado == 8 ) {
       image( this.fondo[8], 0, 0 )
         this.pantalla(7, 5, 5, 580, 120);
-      this.opcion.dibujobt(400, 500, "IR CON ELLA");
-      this.opcion.dibujobt(200, 500, "SEPARARSE");
+      this.opcion[6].dibujobt(400, 500);
+      this.opcion[7].dibujobt(200, 500);
     } else if ( this.estado == 9 ) {
       image( this.fondo[9], 0, 0 )
         this.pantalla(8, 5, 5, 580, 120);
-      this.opcion.dibujobt(470, 500, "SIGUIENTE");
+      this.opcion[4].dibujobt(470, 500);
     } else if ( this.estado == 10 ) {
       image( this.fondo[10], 0, 0 )
         this.pantalla(9, 5, 5, 580, 120);
-      this.opcion.dibujobt(470, 500, "FIN");
+      this.opcion[5].dibujobt(470, 500);
     } else if ( this.estado == 11 ) {
       image( this.fondo[11], 0, 0 )
         this.pantalla(10, 5, 5, 580, 120);
-      this.opcion.dibujobt(470, 500, "SIGUIENTE");
+      this.opcion[4].dibujobt(470, 500);
     } else if ( this.estado == 12 ) {
       image( this.fondo[12], 0, 0 )
         this.pantalla(11, 5, 5, 580, 120);
-      this.opcion.dibujobt(470, 500, "FIN");
+      this.opcion[5].dibujobt(470, 500);
     } else if ( this.estado == 13 ) {
       image( this.fondo[13], 0, 0 )
         this.pantalla(12, 5, 200, 580, 120);
-      this.opcion.dibujobt(470, 500, "VOLVER");
+      this.opcion[8].dibujobt(470, 500);
     }
   }
   pantalla(i, x, y, lon, alto) {
@@ -112,6 +128,47 @@ class aventura {
   }
 
   andabt() {
-    this.estado= this.opcion.press(this.estado);
+    if (this.opcion[8].apretobt(470, 500) && this.estado== 13 ) {
+      this.cambio(0);
+    } else if (this.opcion[0].apretobt(370, 500) && this.estado== 0 ) {
+      this.cambio(1);
+    } else if (this.opcion[1].apretobt(170, 500) && this.estado== 0 ) {
+      this.cambio(13);
+    } else if (this.opcion[2].apretobt(150, 200) && this.estado== 1) {
+       this.cambio(2);
+    } else if (this.opcion[3].apretobt(120, 280) && this.estado == 1 ) {
+       this.cambio(7);
+    } else if (this.opcion[4].apretobt(470, 500) && this.estado == 2 ) {
+       this.cambio(3);
+    } else if (this.opcion[4].apretobt(470, 500) && this.estado == 4 ) {
+       this.cambio(5);
+    } else if (this.opcion[4].apretobt(470, 500) && this.estado== 5 ) {
+       this.cambio(6);
+    } else if (this.opcion[5].apretobt(470, 500) && this.estado == 6 ) {
+       this.cambio(0);
+    }
+    //SEGUNDA RAMA
+    else if (this.opcion[6].apretobt(400, 500) && this.estado == 7 ) {
+      this.cambio(8);
+    } else if (this.opcion[7].apretobt(200, 500) && this.estado == 7 ) {
+       this.cambio(2);
+    } else if (this.opcion[6].apretobt(400, 500) && this.estado == 8 ) {
+       this.cambio(11);
+    } else if (this.opcion[7].apretobt(200, 500) && this.estado == 8 ) {
+       this.cambio(9);
+    } else if (this.opcion[4].apretobt(470, 500) && this.estado == 9 ) {
+       this.cambio(10);
+    } else if (this.opcion[5].apretobt(470, 500) && this.estado == 10 ) {
+       this.cambio(0);
+    }
+    //TERCER RAMA
+    else if (this.opcion[4].apretobt(470, 500) && this.estado == 11 ) {
+       this.cambio(12);
+    } else if (this.opcion[5].apretobt(470, 500) && this.estado == 12 ) {
+       this.cambio(0);
+    } 
+  }
+  cambio(nuevo){
+  this.estado=nuevo;
   }
 }
