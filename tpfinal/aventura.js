@@ -6,10 +6,8 @@ class aventura {
     this.historia=[];
     this.mipreload();
     this.i=0;
-    this.b=0;
     this.opcion=[];
     this.loadbt();
-    //this.opcion= new boton(100, 50);
     this.j= new juego();
   }
 
@@ -128,47 +126,44 @@ class aventura {
   }
 
   andabt() {
-    if (this.opcion[8].apretobt(470, 500) && this.estado== 13 ) {
-      this.cambio(0);
+  if (this.opcion[8].apretobt(470, 500) && this.estado== 13 ) {
+      this.estado=0;
     } else if (this.opcion[0].apretobt(370, 500) && this.estado== 0 ) {
-      this.cambio(1);
+      this.estado=1;
     } else if (this.opcion[1].apretobt(170, 500) && this.estado== 0 ) {
-      this.cambio(13);
+      this.estado=13;
     } else if (this.opcion[2].apretobt(150, 200) && this.estado== 1) {
-       this.cambio(2);
+       this.estado=2;
     } else if (this.opcion[3].apretobt(120, 280) && this.estado == 1 ) {
-       this.cambio(7);
+       this.estado=7;
     } else if (this.opcion[4].apretobt(470, 500) && this.estado == 2 ) {
-       this.cambio(3);
+       this.estado=3;
     } else if (this.opcion[4].apretobt(470, 500) && this.estado == 4 ) {
-       this.cambio(5);
+       this.estado=5;
     } else if (this.opcion[4].apretobt(470, 500) && this.estado== 5 ) {
-       this.cambio(6);
+       this.estado=6;
     } else if (this.opcion[5].apretobt(470, 500) && this.estado == 6 ) {
-       this.cambio(0);
+       this.estado=0;
     }
     //SEGUNDA RAMA
     else if (this.opcion[6].apretobt(400, 500) && this.estado == 7 ) {
-      this.cambio(8);
+      this.estado=8;
     } else if (this.opcion[7].apretobt(200, 500) && this.estado == 7 ) {
-       this.cambio(2);
+       this.estado=2;
     } else if (this.opcion[6].apretobt(400, 500) && this.estado == 8 ) {
-       this.cambio(11);
+       this.estado=11;
     } else if (this.opcion[7].apretobt(200, 500) && this.estado == 8 ) {
-       this.cambio(9);
+       this.estado=9;
     } else if (this.opcion[4].apretobt(470, 500) && this.estado == 9 ) {
-       this.cambio(10);
+       this.estado=10;
     } else if (this.opcion[5].apretobt(470, 500) && this.estado == 10 ) {
-       this.cambio(0);
+       this.estado=0;
     }
     //TERCER RAMA
     else if (this.opcion[4].apretobt(470, 500) && this.estado == 11 ) {
-       this.cambio(12);
+       this.estado=12;
     } else if (this.opcion[5].apretobt(470, 500) && this.estado == 12 ) {
-       this.cambio(0);
+       this.estado=0;
     } 
-  }
-  cambio(nuevo){
-  this.estado=nuevo;
   }
 }
